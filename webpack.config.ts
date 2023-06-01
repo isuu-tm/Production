@@ -34,34 +34,25 @@
 import path from 'path' /* При импорте */
 import webpack from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
+import {buildPlugins} from "./config/build/buildPlugins";
+import {buildLoader} from "./config/build/buildLoader";
+import {buildResolvers} from "./config/build/buildResolvers";
+import {buildWebpackConfig} from "./config/build/buildWebpackConfig";
+import {BuildsPaths} from "./config/build/types/config";
 
-const config:webpack.Configuration = {
-    mode: 'development',
+const paths: BuildsPaths = {
     entry: path.resolve(__dirname, 'src', 'index.ts'),
+    build:path.resolve(__dirname, 'build'),
+    html: path.resolve(__dirname, 'public', 'index.html'),
+}
 
-    output: {
-        filename: "[name].[contenthash].js",
-        path: path.resolve(__dirname, 'build'),
-        clean: true
-    },
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, 'public', 'index.html' )
-        }),
-        new webpack.ProgressPlugin()
-    ],
-    module: {
-        rules: [
-            {
-                test: /\.tsx?$/,
-                use: 'ts-loader',
-                exclude: /node_modules/,
-            },
-        ],
-    },
-    resolve: {
-        extensions: ['.tsx', '.ts', '.js'],
-    },
-};
+const mode = 'development'
+const isDev = mode === "development"
+
+const config:webpack.Configuration = buildWebpackConfig({
+    mode:"development",
+    paths,
+    isDev
+})
 
 export default config;
