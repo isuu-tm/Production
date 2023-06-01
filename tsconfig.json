@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "noImplicitAny": true,/* Это строка отвечает за то что мы не могли писать переменные без типизации*/
+    "module": "ESNext",
+    "target": "es5", /* Здесь прописано какая стандартизация, в итоге мы компилируем */
+    "jsx": "react", /* Эта строка отвечает за то что мы могли писать html внутри js */
+    "allowJs": true,
+    "moduleResolution": "node", /**/
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true /* Это строка отвечает за дефолтную импорт и экспорт */
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
+}
+
