@@ -1,5 +1,6 @@
 export function someFn() {
     console.log('Random')
+    return ''
 }
 
 export function someString(arg:string):string {
