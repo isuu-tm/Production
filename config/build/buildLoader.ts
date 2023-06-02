@@ -1,13 +1,28 @@
 import webpack from "webpack";
 
-export function buildLoader():webpack.RuleSetRule[] {
+export function buildLoader(): webpack.RuleSetRule[] {
+
+    const cssLoader = {
+        test: /\.s[ac]ss$/i,
+        use: [
+            // Creates `style` nodes from JS strings
+            "style-loader",
+            // Translates CSS into CommonJS
+            "css-loader",
+            // Compiles Sass to CSS
+            "sass-loader",
+        ],
+    };
+
     const typescriptLoader = {
+        /* Если мы используем нативный js, то нужно дополнительные лоадеры*/
         test: /\.tsx?$/,
         use: 'ts-loader',
         exclude: /node_modules/,
     }
 
     return [
-        typescriptLoader
+        typescriptLoader,
+        cssLoader
     ]
 }
