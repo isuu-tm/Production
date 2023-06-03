@@ -1,9 +1,12 @@
 import {render} from "react-dom";
 import App from "./App";
+import {BrowserRouter} from "react-router-dom";
 
 render(
-    <App/>,
-    document.getElementById('root'))
+    <BrowserRouter>
+        <App/>
+    </BrowserRouter>,
+    document.getElementById('root'));
 
 /* В методе render, принимает 2 обязательных аргумента
 * 1 - элемент
