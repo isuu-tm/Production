@@ -1,15 +1,20 @@
-import React, {Suspense} from 'react';
+import React, {Suspense, useContext, useState} from 'react';
 import {Counter} from "./components/Counter";
 import {Link, Route, Routes} from 'react-router-dom'
 import './index.scss'
-import About from "./pages/AboutPages/About";
-import Main from "./pages/MainPages/Main";
 import {MainAsync} from "./pages/MainPages/Main.async";
 import {AboutAsync} from "./pages/AboutPages/About.async";
+import {useTheme} from "./theme/useTheme";
+
 
 const App = () => {
+
+    const {theme, toggleTheme} = useTheme(); /* Кастомный хук */
+
     return (
-        <div className="app">
+        <div className={`app ${theme}`}>
+
+
             <Suspense fallback={<div>...Загрузка</div>}>
             {
                 /* В новых версиях реакт роутера
@@ -21,6 +26,9 @@ const App = () => {
             <Link to='/about'>
                 О нас
             </Link>
+                <button onClick={toggleTheme}>
+                    Переключить тему
+                </button>
             <Routes>
                     <Route path='about' element={<AboutAsync/>}/>
                     <Route path='main' element={<MainAsync/>}/>
