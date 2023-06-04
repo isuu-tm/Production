@@ -5,6 +5,7 @@ import './index.scss'
 import {MainAsync} from "./pages/MainPages/Main.async";
 import {AboutAsync} from "./pages/AboutPages/About.async";
 import {useTheme} from "./theme/useTheme";
+import {classNames} from "./helpers/classNames/classNames";
 
 
 const App = () => {
@@ -12,9 +13,7 @@ const App = () => {
     const {theme, toggleTheme} = useTheme(); /* Кастомный хук */
 
     return (
-        <div className={`app ${theme}`}>
-
-
+        <div className={classNames('app', { hovered : true}, [theme, 'dadInside'],)}>
             <Suspense fallback={<div>...Загрузка</div>}>
             {
                 /* В новых версиях реакт роутера
