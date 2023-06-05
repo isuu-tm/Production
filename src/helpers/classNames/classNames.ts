@@ -10,4 +10,4 @@ export function classNames(cls:string, mods:Mods, additional:string[]):string {
     /* Object entries - возвращает нам ключ и значение в виде массива*/
     ]
         .join(' ')
-}
+};
