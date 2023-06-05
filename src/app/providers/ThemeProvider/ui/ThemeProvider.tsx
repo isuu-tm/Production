@@ -1,5 +1,7 @@
 import React, {FC, PropsWithChildren, useMemo, useState} from 'react';
-import {LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext} from "./ThemeContext";
+import {LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext} from "../lib/ThemeContext";
+/* Относительные импорты */
+
 
 const defaultTheme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme || Theme.LIGHT;
 /* В коде выше написано, что воспринимай это как перечисление enum */

@@ -33,10 +33,6 @@
 
 import path from 'path' /* При импорте */
 import webpack from 'webpack'
-import HtmlWebpackPlugin from 'html-webpack-plugin'
-import {buildPlugins} from "./config/build/buildPlugins";
-import {buildLoader} from "./config/build/buildLoader";
-import {buildResolvers} from "./config/build/buildResolvers";
 import {buildWebpackConfig} from "./config/build/buildWebpackConfig";
 import {BuildEnv, BuildsPaths} from "./config/build/types/config";
 
@@ -45,6 +41,7 @@ const paths: BuildsPaths = {
     entry: path.resolve(__dirname, 'src', 'index.tsx'),
     build: path.resolve(__dirname, 'build'),
     html: path.resolve(__dirname, 'public', 'index.html'),
+    src: path.resolve(__dirname, 'src'),
 }
 
 export default (env:BuildEnv) => {

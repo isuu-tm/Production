@@ -1,11 +1,10 @@
-import React, {Suspense, useContext, useState} from 'react';
-import {Counter} from "./components/Counter";
+import React, {Suspense} from 'react';
 import {Link, Route, Routes} from 'react-router-dom'
-import './index.scss'
-import {MainAsync} from "./pages/MainPages/Main.async";
-import {AboutAsync} from "./pages/AboutPages/About.async";
-import {useTheme} from "./theme/useTheme";
-import {classNames} from "./helpers/classNames/classNames";
+import './styles/index.scss'
+import {useTheme} from "app/providers/ThemeProvider";
+import {classNames} from "shared/lib/classNames/classNames";
+import {AboutPage} from "pages/AboutPages";
+import {MainPage} from "pages/MainPages";
 
 
 const App = () => {
@@ -29,11 +28,10 @@ const App = () => {
                     Переключить тему
                 </button>
             <Routes>
-                    <Route path='about' element={<AboutAsync/>}/>
-                    <Route path='main' element={<MainAsync/>}/>
+                    <Route path='about' element={<AboutPage/>}/>
+                    <Route path='main' element={<MainPage/>}/>
             </Routes>
 
-            <Counter/>
             </Suspense>
         </div>
     );
