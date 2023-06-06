@@ -28,7 +28,7 @@ export function buildLoader({isDev}: BuildOptions): webpack.RuleSetRule[] {
     }; /* Это loader для препроцессоров такие как scss sass */
 
     const typescriptLoader = {
-        /* Если мы используем нативный js, то нужно дополнительные лоадеры*/
+        /* Если мы используем нативный js, то нужно дополнительные лоyдеры */
         test: /\.tsx?$/,
         use: 'ts-loader',
         exclude: /node_modules/,
