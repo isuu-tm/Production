@@ -4,6 +4,7 @@ import './styles/index.scss'
 import {useTheme} from "app/providers/ThemeProvider";
 import {classNames} from "shared/lib/classNames/classNames";
 import {AppRouter} from "app/providers/router";
+import {Navbar} from "widgets/Navbar";
 
 
 const App = () => {
@@ -12,12 +13,7 @@ const App = () => {
 
     return (
         <div className={classNames('app', { hovered : true}, [theme, 'dadInside'],)}>
-            <Link to='/main'>
-                Главная
-            </Link>
-            <Link to='/about'>
-                О нас
-            </Link>
+            <Navbar/>
             <AppRouter/>
             <button onClick={toggleTheme}>
                 Переключить тему
