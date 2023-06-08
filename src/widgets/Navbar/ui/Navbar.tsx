@@ -25,9 +25,12 @@ export const Navbar:FC<NavbarPropsType> = ({className}) => {
                     theme={AppLinkTheme.RED}
                     to='/about'
                 >
+
                     О нас
                 </AppLink>
             </div>
         </div>
     );
 };
+
+

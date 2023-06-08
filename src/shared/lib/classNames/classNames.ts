@@ -4,7 +4,7 @@ export function classNames(cls:string, mods :Mods = {}, additional:string[] = []
     /* Если мы по умолчанию передадим значения то в ts они станут необязательным */
     return [
         cls,
-        ...additional.filter(Boolean),
+        ...additional.filter(Boolean ),
         Object.entries(mods)
             .filter(([className, value]) => Boolean(value))
             .map(([className]) => className)
