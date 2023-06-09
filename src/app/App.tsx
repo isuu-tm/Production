@@ -3,7 +3,7 @@ import {useTheme} from "app/providers/ThemeProvider";
 import {classNames} from "shared/lib/classNames/classNames";
 import {AppRouter} from "app/providers/router";
 import {Navbar} from "widgets/Navbar";
-import {ThemeSwitcher} from "shared/ui/ThemeSwitcher";
+import {Sidebar} from "widgets/Sidebar";
 
 
 const App = () => {
@@ -12,9 +12,11 @@ const App = () => {
 
     return (
         <div className={classNames('app', { hovered : true}, [theme, 'dadInside'],)}>
-            <ThemeSwitcher/>
             <Navbar/>
-            <AppRouter/>
+            <div className='content-page'>
+                <Sidebar/>
+                <AppRouter/>
+            </div>
         </div>
     );
 };

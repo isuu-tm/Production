@@ -2,7 +2,7 @@ import {classNames} from "shared/lib/classNames/classNames";
 import cls from './ThemeSwitcher.module.scss'
 import {FC} from "react";
 import {Theme, useTheme} from "app/providers/ThemeProvider";
-import DarkIcon from './../../../assets/icons/dark.svg'
+import DarkIcon from './../../../assets/icons/dark .svg'
 import LightIcon from './../../../assets/icons/light.svg'
 import {Button, ThemeButton} from "shared/ui/Button/Button";
 
@@ -21,10 +21,9 @@ export const ThemeSwitcher:FC<ThemeSwitcherProps> = ({className}) => {
         >
             {
                 theme === Theme.DARK
-                    ? <DarkIcon/>
-                    : <LightIcon/>
+                    ? <DarkIcon />
+                    : <LightIcon />
             }
-            Переключить тему
         </Button>
     );
 };
