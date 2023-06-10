@@ -1,8 +1,8 @@
 import HtmlWebpackPlugin from "html-webpack-plugin";
-import path from "path";
 import webpack from "webpack";
 import {BuildOptions} from "./types/config";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import ReactRefreshPlugin from "@pmmmwh/react-refresh-webpack-plugin";
 
 export function buildPlugins({paths, isDev}:BuildOptions):webpack.WebpackPluginInstance[] {
     return [
@@ -17,5 +17,8 @@ export function buildPlugins({paths, isDev}:BuildOptions):webpack.WebpackPluginI
         new webpack.DefinePlugin({
             __IS__DEV__: JSON.stringify(isDev),
         }),
+        new webpack.HotModuleReplacementPlugin() /* Плагин для того чтобы, автоматически обновлять сервер без
+        перезагрузки страницы */,
+        // new ReactRefreshPlugin(),
     ]
 };
