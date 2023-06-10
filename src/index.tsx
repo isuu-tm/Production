@@ -3,6 +3,9 @@ import App from "./app/App";
 import {BrowserRouter} from "react-router-dom";
 import { ThemeProvider } from "app/providers/ThemeProvider";
 
+// import i18n from "shared/config/i18/i18n"; Здесь может вылезти ошибка нужно импортировать так
+import  "shared/config/i18/i18n";
+
 render(
     <BrowserRouter>
         <ThemeProvider>
