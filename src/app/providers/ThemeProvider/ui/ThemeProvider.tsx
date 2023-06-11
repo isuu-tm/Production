@@ -6,7 +6,7 @@ import {LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext} from "../lib/ThemeContext"
 const defaultTheme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme || Theme.LIGHT;
 /* В коде выше написано, что воспринимай это как перечисление enum */
 
-    const ThemeProvider:FC<PropsWithChildren> = ({children}) => {
+    const ThemeProvider:FC = ({children}) => {
 
     const [theme, setTheme] = useState<Theme>(defaultTheme)
     /* Код выше, состояние для того чтобы динамически изменять темы */
