@@ -13,7 +13,8 @@
     },
     /* Это строка делается для того чтобы, мы могли импортировать относительными путями */
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true /* Это строка отвечает за дефолтную импорт и экспорт */
+    "allowSyntheticDefaultImports": true /* Это строка отвечает за дефолтную импорт и экспорт */,
+//    "strictNullChecks": true
   },
   "ts-node": {
     "compilerOptions": {
