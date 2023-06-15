@@ -27,6 +27,7 @@ export const Sidebar: FC<SidebarProps> = ({className}) => {
                 Tg
             </button>
             <div className={cls.switchers}>
+
                 <ThemeSwitcher/>
                 <LangSwitcher className={cls.lang}/>
             {/*  Здесь будет кнопка для переключения языка  */}
