@@ -13,12 +13,6 @@ describe('Тесты для классов', () => {
     });
 });
 
-test('object assignment', () => {
-    const data = { one: 1 };
-    data.two = 2;
-    expect(data).toEqual({ one: 1, two: 2 });
-});
-
 test('zero', () => {
     const z = 0;
     expect(z).not.toBeNull();
